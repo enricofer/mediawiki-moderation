@@ -191,6 +191,7 @@ matrix:
       env: TESTSUITE_TYPE=selenium branch=REL1_34
     - <<: *selenium-build
       env: TESTSUITE_TYPE=selenium branch=REL1_35
+      php: 7.3
 
 cache:
   directories:
