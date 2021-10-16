@@ -372,7 +372,7 @@
 		"ListDefinedTags": "edit",
 		"LocalUserCreated": "preload",
 		"ModerationContinueEditingLink": "pageForms",
-		"PageContentSave": "edit",
+		"MultiContentSave": "edit",
 		"PageSaveComplete": [
 			"approveHook",
 			"edit"
