@@ -11,13 +11,23 @@
 
 		<!-- Don't want to apply this -->
 		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.NewLineComment" />
-
 	</rule>
 
 	<rule ref="MediaWiki.Commenting.FunctionComment.MissingParamTag">
 		<!-- TODO: missing documentation in blackbox tests: this can be fixed -->
 		<exclude-pattern>*/tests/phpunit/framework/*</exclude-pattern>
 	</rule>
+
+	<!--
+		Skip consequence/HookRunnerTest.php, which is a symbolic link to unit/HookRunnerTest.php
+		(only one of these 2 paths must be checked).
+
+		Unfortunately MediaWiki added a hardcoded requirement that tests must be in "unit" subdirectory
+		if they subclass MediaWikiUnitTestCase (which is what HookRunnerTestBase does),
+		and we are definitely not renaming 78 files in Git (breaking history display on GitHub, etc.)
+		just to workaround that.
+	-->
+    <exclude-pattern>*/tests/phpunit/consequence/HookRunnerTest.php</exclude-pattern>
 
 	<rule ref="MediaWiki.Files.ClassMatchesFilename.NotMatch">
 		<!-- Benchmark scripts should have short names, not full class names -->
